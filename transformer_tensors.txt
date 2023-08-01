@@ -1,0 +1,91 @@
+Token embeddings
+cpp-vars	model.wte_weight / model.wte / model.tok_embeddings 
+gptneox	        gpt_neox.embed_in.weight
+gpt2	        transformer.wte.weight
+mpt	        transformer.wte.weight
+falcon	        transformer.word_embeddings.weight
+llama-hf	model.embed_tokens.weight
+llama-pth	tok_embeddings.weight
+
+Position encoding
+cpp-vars	model.wpe
+gpt2	        transformer.wpe.weight
+
+Attention norm
+cpp-vars	layer.norm_1_weight / layer.input_layernorm / layer.input_layernorm_b / layer.ln_1_g / layer.ln_1_b
+gptneox	        gpt_neox.layers.0.input_layernorm.weight / gpt_neox.layers.0.input_layernorm.bias
+gpt2	        transformer.h.0.ln_1.weight / transformer.h.0.ln_1_bias
+mpt	        transformer.blocks.0.norm_1.weight
+falcon7b	transformer.h.0.input_layernorm.weight / transformer.h.0.input_layernorm.bias
+falcon40b	transformer.h.0.ln_mlp.weight / transformer.h.0.ln_mlp.bias
+falcon40b	transformer.h.0.ln_attn.weight / transformer.h.0.ln_attn.bias
+
+Attention query-key-value
+cpp-vars	layer.c_attn_wqkv_weight / layer.query_key_value / layer.c_attn_attn_w / layer.c_attn_attn_b
+gptneox	        gpt_neox.layers.0.attention.query_key_value.weight / gpt_neox.layers.0.attention.query_key_value.bias
+gpt2	        transformer.h.0.attn.c_attn.weight / transformer.h.0.attn.c_attn.bias
+mpt	        transformer.blocks.0.attn.Wqkv.weight
+falcon	        transformer.h.0.self_attention.query_key_value.weight
+
+llama
+cpp-vars	layer.wq / layer.wk / layer.wv
+hf	        model.layers.0.self_attn.q_proj.weight / model.layers.0.self_attn.k_proj.weight / model.layers.0.self_attn.v_proj.weight
+pth	        layers.0.attention.wq.weight / layers.0.attention.wk.weight / layers.0.attention.wv.weight
+
+Attention output
+cpp-vars	layer.c_attn_out_proj_weight / layer.wo / layer.c_attn_proj_w / layer.c_attn_proj_b
+gptneox	        gpt_neox.layers.0.attention.dense.weight / gpt_neox.layers.0.attention.dense.bias
+gpt2	        transformer.h.0.attn.c_proj.weight / transformer.h.0.attn.c_proj.bias
+mpt	        transformer.blocks.0.attn.out_proj.weight
+falcon	        transformer.h.0.self_attention.dense.weight
+llama-hf	model.layers.0.self_attn.o_proj.weight
+llama-pth	layers.0.attention.wo.weight
+
+Feed-forward norm
+cpp-vars	layer.norm_2_weight / layer.ffn_norm / layer.ln_2_g / layer.ln_2_b
+gptneox        	gpt_neox.layers.0.post_attention_layernorm.weight / gpt_neox.layers.0.post_attention_layernorm.bias
+gpt2	        transformer.h.0.ln_2.weight / transformer.h.0.ln_2_bias
+mpt	        transformer.blocks.0.norm_2.weight
+llama-hf	model.layers.0.post_attention_layernorm.weight
+llama-pth	layers.0.ffn_norm.weight
+
+Feed-forward up
+cpp-vars	layer.ffn_up_proj / layer.w3 / layer.ffn_up / layer.c_mlp_fc_w / layer.c_mlp_fc_b
+gptneox        	gpt_neox.layers.0.mlp.dense_h_to_4h.weight / gpt_neox.layers.0.mlp.dense_h_to_4h.bias
+gpt2	        transformer.h.0.mlp.c_fc.weight / transformer.h.0.mlp.c_fc.bias
+mpt	        transformer.blocks.0.ffn.up_proj.weight
+falcon	        transformer.h.0.mlp.dense_h_to_4h.weight
+llama-hf	model.layers.0.mlp.up_proj.weight
+llama-pth	layers.0.feed_forward.w3.weight
+
+Feed-forward gate
+cpp-vars	layer.w1
+llama-hf	model.layers.0.mlp.gate_proj.weight
+llama-pth	layers.0.feed_forward.w1.weight
+
+Feed-forward down
+cpp-vars	layer.ffn_down_proj / layer.w2 / layer.ffn_down / layer.c_mlp_proj_w / layer.c_mlp_proj_b
+gptneox	        gpt_neox.layers.0.mlp.dense_4h_to_h.weight / gpt_neox.layers.0.mlp.dense_4h_to_h.bias
+gpt2	        transformer.h.0.mlp.c_proj.weight / transformer.h.0.mlp.c_proj.bias
+mpt	        transformer.blocks.0.ffn.down_proj.weight
+falcon	        transformer.h.0.mlp.dense_4h_to_h.weight
+llama-hf	model.layers.0.mlp.down_proj.weight
+llama-pth	layers.0.feed_forward.w2.weight
+
+Output norm
+cpp-vars	model.norm_f_weight / model.output_norm / model.output_norm_b / model.ln_f_g / model.ln_f_b / model.norm
+gptneox	        gpt_neox.final_layer_norm.weight / gpt_neox.final_layer_norm.bias
+gpt2	        transformer.ln_f.weight / transformer.ln_f.bias
+mpt	        transformer.norm_f.weight
+falcon	        transformer.ln_f.weight / transformer.ln_f.bias
+llama-hf	model.norm.weight
+llama-pth	norm.weight
+
+Output
+cpp-vars	model.lm_head / model.output / model.lm_head / model.lmh_g
+gptneox	        embed_out.weight
+gpt2	        lm_head.weight
+mpt	        lm_head.weight
+falcon	        lm_head.weight
+llama-hf	lm_head.weight
+llama-pth	output.weight
