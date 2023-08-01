@@ -7,7 +7,7 @@ falcon	        transformer.word_embeddings.weight
 llama-hf	model.embed_tokens.weight
 llama-pth	tok_embeddings.weight
 
-Position encoding
+Position embedding
 cpp-vars	model.wpe
 gpt2	        transformer.wpe.weight
 
